@@ -1,0 +1,46 @@
+### Node template
+# Logs
+logs
+*.log
+
+# TypeScript cache
+*.tsbuildinfo
+
+# Optional npm cache directory
+.npm
+
+
+
+# Optional REPL history
+.node_repl_history
+
+# Output of 'npm pack'
+*.tgz
+
+# Yarn Integrity file
+.yarn-integrity
+
+# dotenv environment variables file
+.env
+.env.test
+node_modules
+
+# Nuxt.js build / generate output
+dist/*
+!dist/index.html
+!dist/readme.md
+!dist/phaser.min.js
+
+
+# Gatsby files
+.cache/
+
+
+
+# yarn v2
+.yarn/cache
+.yarn/unplugged
+.yarn/build-state.yml
+.yarn/install-state.gz
+.pnp.*
+
