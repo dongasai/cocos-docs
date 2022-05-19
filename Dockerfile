@@ -24,11 +24,14 @@ RUN cnpm install -g yarn
 RUN cnpm install -g nrm
 RUN nrm use taobao
 WORKDIR /var/www/html
-COPY package.json /var/www/html/
-COPY yarn.lock /var/www/html/
 
-RUN yarn
+COPY book.json /var/www/html/
+RUN npm install gitbook-cli -g
+RUN gitbook install
+COPY package.json /var/www/html/
+COPY package-lock.json /var/www/html/
+RUN npm i
 COPY . /var/www/html/
-RUN yarn build
+RUN npm run build
 #重置工作目录
 WORKDIR /var/www/html
