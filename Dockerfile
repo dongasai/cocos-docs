@@ -25,10 +25,10 @@ RUN nrm use taobao
 WORKDIR /var/www/html
 RUN npm install gitbook-cli -g
 COPY . /var/www/html/
-RUN gitbook install
 RUN npm i
+RUN gitbook install
 RUN npm run build
 #重置工作目录
 WORKDIR /var/www/html
 
-CMD [ "npm" ,"run","http" ]
+CMD [ "node" ,"http.js" ]
