@@ -1,9 +1,8 @@
 
 FROM node:11
 
-MAINTAINER Dongasai 1514582970@qq.com
 
-ENV buildversion=3
+ENV buildversion=4
 
 #更新apt-get源 使用163的源
 #RUN echo "deb http://mirrors.163.com/debian/ buster main non-free contrib" > /etc/apt/sources.list && \
@@ -24,14 +23,12 @@ RUN cnpm install -g yarn
 RUN cnpm install -g nrm
 RUN nrm use taobao
 WORKDIR /var/www/html
-
-COPY book.json /var/www/html/
 RUN npm install gitbook-cli -g
-RUN gitbook install
-COPY package.json /var/www/html/
-COPY package-lock.json /var/www/html/
-RUN npm i
 COPY . /var/www/html/
+RUN gitbook install
+RUN npm i
 RUN npm run build
 #重置工作目录
 WORKDIR /var/www/html
+
+CMD [ "npm" ,"run","http" ]

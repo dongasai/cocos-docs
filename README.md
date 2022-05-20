@@ -1,5 +1,14 @@
 # Cocos Creator User Manual
 
+> 增加了Docker打包相关，方便本地部署
+
+## docker
+
+```
+sudo docker build . -t cocos_doc:3.5
+
+```
+
 ## Requirements
 
 This documentation site is powered by [GitBook](https://www.gitbook.com/). You can check out the online version [here](https://docs.cocos.com/creator/manual).
