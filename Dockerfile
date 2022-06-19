@@ -4,15 +4,15 @@ FROM node:11
 
 ENV buildversion=4
 
-#更新apt-get源 使用163的源
-#RUN echo "deb http://mirrors.163.com/debian/ buster main non-free contrib" > /etc/apt/sources.list && \
-#    echo "deb http://mirrors.163.com/debian/ buster-updates main non-free contrib " >> /etc/apt/sources.list  && \
-#    echo "deb http://mirrors.163.com/debian/ buster-backports main non-free contrib " >> /etc/apt/sources.list && \
-#    echo "deb-src http://mirrors.163.com/debian/ buster main non-free contrib " >> /etc/apt/sources.list && \
-#    echo "deb-src http://mirrors.163.com/debian/ buster-updates main non-free contrib " >> /etc/apt/sources.list && \
-#    echo "deb-src http://mirrors.163.com/debian/ buster-backports main non-free contrib " >> /etc/apt/sources.list  && \
-#    echo "deb http://mirrors.163.com/debian-security/ buster/updates main non-free contrib  " >> /etc/apt/sources.list  && \
-#    echo "deb-src http://mirrors.163.com/debian-security/ buster/updates main non-free contrib " >> /etc/apt/sources.list
+#更新apt-get源 使用aliyun的源
+RUN echo "deb http://mirrors.aliyun.com/debian/ buster main non-free contrib" > /etc/apt/sources.list && \
+   echo "deb http://mirrors.aliyun.com/debian/ buster-updates main non-free contrib " >> /etc/apt/sources.list  && \
+   echo "deb http://mirrors.aliyun.com/debian/ buster-backports main non-free contrib " >> /etc/apt/sources.list && \
+   echo "deb-src http://mirrors.aliyun.com/debian/ buster main non-free contrib " >> /etc/apt/sources.list && \
+   echo "deb-src http://mirrors.aliyun.com/debian/ buster-updates main non-free contrib " >> /etc/apt/sources.list && \
+   echo "deb-src http://mirrors.aliyun.com/debian/ buster-backports main non-free contrib " >> /etc/apt/sources.list  && \
+   echo "deb http://mirrors.aliyun.com/debian-security/ buster/updates main non-free contrib  " >> /etc/apt/sources.list  && \
+   echo "deb-src http://mirrors.aliyun.com/debian-security/ buster/updates main non-free contrib " >> /etc/apt/sources.list
 
 RUN apt-get update;
 
